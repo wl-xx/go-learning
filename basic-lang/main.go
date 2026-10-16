@@ -4,9 +4,11 @@ import (
 	"cmp"
 	"fmt"
 	"maps"
+	"os"
 	"slices"
 	"strconv"
 	"strings"
+	"time"
 	"unicode/utf8"
 )
 
@@ -107,4 +109,22 @@ func main() {
 	fmt.Println(v, err)
 	next := Counter()
 	fmt.Println(next(), next())
+
+	// time
+	fmt.Println("---------------time-----------------")
+	now := time.Now()
+	fmt.Println(int(now.Month()))
+	fmt.Println(now.Format("2006-01-02 15:04:05"))
+	fmt.Println(now.Format(time.DateTime))
+	fmt.Println(time.DateTime)
+	nextTime := now.Add(24 * time.Hour)
+	fmt.Println(nextTime.Sub(now))
+	t, err := time.Parse("2006-01-02", "2026-10-08")
+	fmt.Println(t, err)
+
+	// file
+	os.WriteFile("data.json", []byte("{\"name\": \"张三\"}"), 0o655)
+	// ReadFile会读取到内存中，不适合大文件读取
+	data, err := os.ReadFile("data.json")
+	fmt.Println(string(data), err)
 }
