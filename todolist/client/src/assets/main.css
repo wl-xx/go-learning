@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #292a3a;
+  --muted: #777889;
+  --accent: #5b5ce2;
+  --line: #e4e4ee;
+  --paper: #ffffff;
+  color: var(--ink);
+  background: #f8f8fc;
+  font-family: 'DM Sans', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(210, 210, 254, 0.37), transparent 26rem),
+    radial-gradient(circle at 100% 100%, rgba(236, 218, 255, 0.28), transparent 29rem),
+    #f8f8fc;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(91, 92, 226, 0.35);
+  outline-offset: 2px;
+}
